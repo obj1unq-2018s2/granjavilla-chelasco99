@@ -1,0 +1,22 @@
+import wollok.game.*
+import hector.*
+import cultivos.*
+
+program farmville {
+
+// CONFIG
+    game.title("FarmVille")
+    game.height(10)
+    game.width(10)
+    game.ground("ground.png")
+    
+    game.addVisualCharacter(hector)
+    
+    keyboard.m().onPressDo { hector.plantarMaiz() }
+    keyboard.t().onPressDo { hector.plantarTrigo() }
+    keyboard.o().onPressDo { hector.plantarTomaco() }
+    keyboard.r().onPressDo { hector.regar(hector.posicion().allElements()) }
+    
+    game.start()
+    }    	
+
